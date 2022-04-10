@@ -32,3 +32,9 @@ gcloud iam service-accounts keys create bigquery-sa.json --iam-account=bigquery-
 http://localhost:8000
 ```
 
+5. Create and setup connection
+```
+Source --> File
+Destination --> BigQuery
+Set the sync frequency to Manual, the sync mode to Full refresh | Append and select Basic Normalization. Then under the Custom Transformation section, add a custom dbt transformation. Enter the URL of your Gitbub dbt repository. Once you have setup the connection, you need to save the connection ID from the URL to later use it integrate with Airflow on your command line when running the setup.sh command.
+```
